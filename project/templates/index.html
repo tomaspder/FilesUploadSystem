@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Upload</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'><link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+
+</head>
+<body>
+<div id="FileUpload">
+  <div class="wrapper">
+    <div class="upload">
+      <form name="" method="POST" action="" enctype="multipart/form-data">
+        <input type="file" name="files[]" id="files[]" accept=".csv" class="upload__button" onchange="showfiles()" multiple="true" autocomplete="off" required></input>
+        <br></br>
+        <input onclick="load()" id="btnsub" type="submit" value="Subir" class="submit__button"></input>
+        <a id="qry" href="{{ url_for('files_view') }}" style="position: absolute; width: 50%;">Consultar archivos</a>
+      </form>
+
+    </div>
+    <div class="uploaded uploaded--one">
+      <i class="far fa-file-pdf"></i>
+      <div class="file">
+        <div class="file__name">
+          <p id="f1">file_cito.xlsm</p>
+          <i class="fas fa-times"></i>
+        </div>
+        <div class="progress">
+          <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" style="width:100%"></div>
+        </div>
+      </div>
+    </div>
+    <div class="uploaded uploaded--two">
+      <i class="far fa-file-pdf"></i>
+      <div class="file">
+        <div class="file__name">
+          <p id="f2">archi_vito.xls</p>
+          <i class="fas fa-times"></i>
+        </div>
+        <div class="progress">
+          <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" style="width:80%"></div>
+        </div>
+      </div>
+    </div>
+    <div class="uploaded uploaded--three">
+      <i class="far fa-file-pdf"></i>
+      <div class="file">
+        <div class="file__name">
+          <p id="f3">algun_file.csv</p>
+          <i class="fas fa-times"></i>
+        </div>
+        <div class="progress">
+          <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" style="width:60%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+      //funcion para el success de subida de files
+
+      function load() {
+        var btn = document.getElementById("btnsub")
+        btn.onclick = alert("{{message}}");
+      }
+
+      //funcion para obtener el nombre de los files
+      showfiles =()=>{
+        var f = document.getElementById('files[]')
+        var f1 = document.getElementById('f1');
+        f1.innerText = f.files.item(0).name
+        var f2 = document.getElementById('f2');
+        f2.innerText = f.files.item(1).name
+        var f3 = document.getElementById('f3');
+        f3.innerText = f.files.item(2).name
+      }
+    </script>
+  
+</body>
+</html>

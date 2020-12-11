@@ -1,0 +1,6 @@
+id;producto;marca;modelo;precio;descripcion;condicion;moneda;garantia
+43;Motherboard;ASUS;B450;12000;4 slots de ram DDR4;nuevo;ARS;si
+13;Procesador;AMD;Ryzen 3 3400G;14600;micro con gpu integrada - freq 3.3 Mhz - 1 anio de uso;usado;ARS;no
+245;Mouse;Logitech;G Pro;6000;sensor optico Hero;nuevo;ARS;si
+24;Gabinete;Gigabyte;C200;150;Importado con rgb y fun;nuevo;USD;si
+63;Fuente;Sentey;SDP-650;10000;650 watts con certificado 80 Plus Bronze;usado;ARS;no
